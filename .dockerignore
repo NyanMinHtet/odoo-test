@@ -1,0 +1,17 @@
+# Git
+.git
+.gitignore
+
+# CI/CD
+.github
+
+# Client VPS specific
+client-vps
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Odoo
+*.log

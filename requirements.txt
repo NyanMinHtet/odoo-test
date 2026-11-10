@@ -1,0 +1,2 @@
+# Requirements placeholder - no real dependencies
+# This file is intentionally minimal as Odoo handles its own dependencies

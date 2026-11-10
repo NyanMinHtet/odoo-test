@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="view_custom_hello_tree" model="ir.ui.view">
+    <field name="name">custom.hello.tree</field>
+    <field name="model">custom.hello</field>
+    <field name="arch" type="xml">
+      <tree string="Hello Records">
+        <field name="name"/>
+        <field name="message"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_custom_hello_form" model="ir.ui.view">
+    <field name="name">custom.hello.form</field>
+    <field name="model">custom.hello</field>
+    <field name="arch" type="xml">
+      <form string="Hello Record">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="message"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_custom_hello" model="ir.actions.act_window">
+    <field name="name">Hello Records</field>
+    <field name="res_model">custom.hello</field>
+    <field name="view_mode">tree,form</field>
+    <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('view_custom_hello_tree')}),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('view_custom_hello_form')})]"/>
+  </record>
+
+  <menuitem id="menu_custom_hello_root" name="Custom Hello" sequence="10"/>
+  <menuitem id="menu_custom_hello_records" name="Hello Records" parent="menu_custom_hello_root" action="action_custom_hello" sequence="10"/>
+</odoo>
