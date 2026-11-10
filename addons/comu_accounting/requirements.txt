@@ -1,0 +1,8 @@
+# Extra Python requirement for comu_accounting that Odoo itself does not declare.
+#
+# XlsxWriter drives the financial report XLSX export engine
+# (models/account_reports/account_report.py, models/account_reports/account_journal_report.py).
+# Odoo core imports xlsxwriter from several Community modules
+# (web/controllers/export.py, web/controllers/pivot.py, pos_self_order,
+# l10n_ph, product/controllers/pricelist_report.py) but never declares it.
+XlsxWriter>=3.1

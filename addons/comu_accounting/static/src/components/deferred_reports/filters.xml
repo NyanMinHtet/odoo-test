@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="comu_accounting.DeferredFilterComparison" t-inherit="comu_accounting.AccountReportFilterComparison">
+        <xpath expr="//DropdownItem[contains(@attrs, 'filter_comparison_same_period_last_year')]" position="replace"/>
+        <xpath expr="//DropdownItem[contains(@attrs, 'filter_comparison_custom')]" position="replace"/>
+    </t>
+
+    <t t-name="comu_accounting.DeferredFilters" t-inherit="comu_accounting.AccountReportFiltersCustomizable">
+        <xpath expr="//div[@id='filter_comparison']/t" position="replace">
+            <t t-call="comu_accounting.DeferredFilterComparison"/>
+        </xpath>
+
+        <xpath expr="//div[@id='filter_extra_options']" position="before">
+            <t t-call="comu_accounting.AccountReportDeferredGroupBy"/>
+        </xpath>
+    </t>
+</templates>
